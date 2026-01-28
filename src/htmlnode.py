@@ -31,5 +31,14 @@ class HTMLNode:
     
 
 class LeafNode(HTMLNode):
-    def __init__(self, tag=None, value=None, children=None, props=None):
-        super().__init__(tag, value, children, props)        
+    def __init__(self, tag, value, props=None):
+        super().__init__(tag, value, props)
+
+    def to_html(self):
+        if self.value == None:
+            raise ValueError
+        elif self.tag == None:
+            return self.value
+        else:
+            pass # Need to finish this
+
