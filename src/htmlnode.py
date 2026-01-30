@@ -14,6 +14,7 @@ class HTMLNode:
             html_str = " "
             for item in dict:
                 html_str = html_str + item + "=" + f"\"{dict[item]}\"" + " "
+            html_str = html_str[:-1] #remove the last space when all items are processed
             return html_str
 
         else:
@@ -32,7 +33,9 @@ class HTMLNode:
 
 class LeafNode(HTMLNode):
     def __init__(self, tag, value, props=None):
-        super().__init__(tag, value, props)
+        super().__init__(tag=tag, value=value, children=None, props=props)
+    
+    
 
     def to_html(self):
         if self.value == None:
@@ -40,5 +43,11 @@ class LeafNode(HTMLNode):
         elif self.tag == None:
             return self.value
         else:
-            pass # Need to finish this
+            if self.props == None:
+                return f"<{self.tag}>{self.value}</{self.tag}>"
+            else:
+                return f"<{self.tag}{self.props_to_html()}>{self.value}</{self.tag}>"
+    
+    def __repr__(self):
+        return super().__repr__()
 
