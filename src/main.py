@@ -1,5 +1,5 @@
 from textnode import TextNode, TextType
-from htmlnode import HTMLNode, LeafNode
+from htmlnode import HTMLNode, LeafNode, ParentNode
 def main():
     print("Hello World") #print hello world, will be called via main.sh
     x = TextNode("Just a test", TextType.LINK, "www.google.com")
@@ -16,4 +16,14 @@ if __name__ == "__main__":
     test = HTMLNode(props=test_dict)
     test2 = LeafNode("p","Hello World!")
     test3 = LeafNode("a", "ClickMe!", test_dict)
+
+    parent1 = ParentNode(
+    "p",
+    [
+        LeafNode("b", "Bold text"),
+        LeafNode(None, "Normal text"),
+        LeafNode("i", "italic text"),
+        LeafNode(None, "Normal text"),
+    ],
+)
     
