@@ -12,11 +12,11 @@ if __name__ == "__main__":
     test_dict = {
     "href": "https://www.google.com",
     "target": "_blank",
-}
+    }
     test = HTMLNode(props=test_dict)
     test2 = LeafNode("p","Hello World!")
     test3 = LeafNode("a", "ClickMe!", test_dict)
-
+    
     parent1 = ParentNode(
     "p",
     [
@@ -25,5 +25,8 @@ if __name__ == "__main__":
         LeafNode("i", "italic text"),
         LeafNode(None, "Normal text"),
     ],
-)
+    )
+    #scratchpad
     
+    st_1 = "056888604"
+    nu_1 = 456664
