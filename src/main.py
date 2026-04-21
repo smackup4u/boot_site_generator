@@ -32,7 +32,7 @@ if __name__ == "__main__":
     nu_1 = 456664
     
     countries = ["America", "Canada", "Australia", "China", "Chile"]
-    for c in countries[:]:
+    for c in countries[:]:      #difference between countries (mutable) and countries[:]
         if c.startswith("C"):
             countries.remove(c)
     print(countries)
