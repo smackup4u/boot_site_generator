@@ -30,3 +30,9 @@ if __name__ == "__main__":
     
     st_1 = "056888604"
     nu_1 = 456664
+    
+    countries = ["America", "Canada", "Australia", "China", "Chile"]
+    for c in countries[:]:
+        if c.startswith("C"):
+            countries.remove(c)
+    print(countries)
